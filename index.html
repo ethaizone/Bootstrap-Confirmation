@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript · Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="https://github.com/ethaizone/Bootstrap-Confirmation">@Github</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="#top">Introduce</a>
+              </li>
+              <li class="">
+                <a href="#install">Installation</a>
+              </li>
+              <li class="">
+                <a href="#example">Examples</a>
+              </li>
+              <li class="">
+                <a href="#usage">Usage</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead">
+  <div class="container">
+      <h1>Bootstrap Confirmation</h1>
+    <p class="lead">jQuery plugin for Twitter Bootstrap. It will help you create confirmation dialog as popover. Simple and easy like popover.</p>
+  </div>
+</header>
+
+  <div class="container">
+
+    <!--
+    ================================================== -->
+    <div class="row">
+      <div class="span12">
+
+
+        <!-- Overview
+        ================================================== -->
+        <section id="intro">
+          <div class="page-header">
+            <h1>Bootstrap Confirmation</h1>
+          </div>
+
+          <h3>Do you bore about alert box?</h3>
+          <p>This is my primary reason that I write this plugin. I want simple box for job about comfirm something before do another. Popover is my choice so I write this plugin with popover be base of it.</p>
+
+          <h3>Before you read next after this.</h3>
+          <p>I'm Thai so my English isn't good so if you see some text that make you want to retype or rearrange, please don't hesitate to create pull request with text that you edited. I will happy that my English can better after your guide too.</p>
+        </section>
+
+
+        <section id="install">
+          <div class="page-header">
+            <h1>Installation</h1>
+          </div>
+
+          <p>Download <a href="https://raw.github.com/ethaizone/Bootstrap-Confirmation/master/bootstrap-confirmation.js" target="_blank">bootstrap-confirmation.js</a> and save to same directory with bootstrap.js. Call it with &lt;script&gt; tag.</p>
+
+          <h3>What about css?</h3>
+          <p>No need another css. It will use same stylesheet as popover because this plugin build with concept that I want it must look like popover.</p>
+
+          <h3>JS dependency?</h3>
+          <p>As same as bootstrap.js. It want JQuery, bootstrap.js and bootstrap-tooltip.js. This confirmation extended from tooltip so tooltip must call at your webpage. If you use bootstrap.min.js, bootstrap-tooltip.js should inclued.</p>
+        </section>
+
+        <section id="example">
+          <div class="page-header">
+            <h1>Examples</h1>
+          </div>
+
+
+          <p>Add small overlays of content, like those on the iPad, to any element for housing button "Yes" and "No". Click the button to trigger the confirmation. <strong>Requires <a href="#tooltips">Tooltip</a> to be included.</strong></p>
+
+          <h3>Live demo</h3>
+          <div class="bs-docs-example" style="padding-bottom: 24px;">
+            <a class="btn btn-large btn-danger" data-toggle="confirmation">Click to toggle confirmation</a>
+          </div>
+
+          <h4>Four directions</h4>
+          <div class="bs-docs-example tooltip-demo">
+            <ul class="bs-docs-tooltip-examples">
+              <li><a class="btn" data-toggle="confirmation" data-placement="left">Confirmation on left</a></li>
+              <li><a class="btn" data-toggle="confirmation" data-placement="top">Confirmation on top</a></li>
+              <li><a class="btn" data-toggle="confirmation" data-placement="bottom">Confirmation on bottom</a></li>
+              <li><a class="btn" data-toggle="confirmation" data-placement="right">Confirmation on right</a></li>
+            </ul>
+          </div>
+
+          <h4>Singleton <span class="label label-important">New feature!</span></h4>
+          <div class="bs-docs-example tooltip-demo">
+            <ul class="bs-docs-tooltip-examples">
+              <li><a class="btn" data-toggle="confirmation-singleton" data-placement="left">Confirmation on left</a></li>
+              <li><a class="btn" data-toggle="confirmation-singleton" data-placement="top">Confirmation on top</a></li>
+              <li><a class="btn" data-toggle="confirmation-singleton" data-placement="bottom">Confirmation on bottom</a></li>
+              <li><a class="btn" data-toggle="confirmation-singleton" data-placement="right">Confirmation on right</a></li>
+            </ul>
+          </div>
+        </section>
+
+
+        <section id="usage">
+          <div class="page-header">
+            <h1>Usage</h1>
+          </div>
+
+          <p>Enable confirmations via JavaScript:</p>
+          <pre class="prettyprint linenums">$('#example').confirmation(options)</pre>
+
+          <p>Recommend way to use:</p>
+          <pre class="prettyprint linenums">$('[data-toggle="confirmation"]').confirmation(options)</pre>
+
+          <h3>Options</h3>
+          <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-animation=""</code>.</p>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">Name</th>
+               <th style="width: 100px;">type</th>
+               <th style="width: 50px;">default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>animation</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>apply a css fade transition to the tooltip</td>
+             </tr>
+             <tr>
+               <td>placement</td>
+               <td>string | function</td>
+               <td>'right'</td>
+               <td>how to position the confirmation - top | bottom | left | right</td>
+             </tr>
+             <tr>
+               <td>selector</td>
+               <td>string</td>
+               <td>false</td>
+               <td>if a selector is provided, tooltip objects will be delegated to the specified targets</td>
+             </tr>
+             <tr>
+               <td>trigger</td>
+               <td>string</td>
+               <td>'click'</td>
+               <td>how confirmation is triggered - click | hover | focus | manual</td>
+             </tr>
+             <tr>
+               <td>href</td>
+               <td>string | function</td>
+               <td>'#'</td>
+               <td>default href value if `data-href` attribute isn't present</td>
+             </tr>
+             <tr>
+               <td>target</td>
+               <td>string | function</td>
+               <td>'_self'</td>
+               <td>default target value if `data-target` attribute isn't present</td>
+             </tr>
+             <tr>
+               <td>
+                <p>singleton</p>
+                <p><span class="label label-important">New feature!</span></p>
+               </td>
+               <td>boolean</td>
+               <td>false</td>
+               <td>
+                <p>make confirmation can show only 1 instanse.</p>
+                <p>If newer confirmation clicked, older will disappear.</td>
+             </tr>
+             <tr>
+               <td>delay</td>
+               <td>number | object</td>
+               <td>0</td>
+               <td>
+                <p>delay showing and hiding the confirmation (ms) - does not apply to manual trigger type</p>
+                <p>If a number is supplied, delay is applied to both hide/show</p>
+                <p>Object structure is: <code>delay: { show: 500, hide: 100 }</code></p>
+               </td>
+             </tr>
+             <tr>
+               <td>container</td>
+               <td>string | false</td>
+               <td>false</td>
+               <td>
+                <p>Appends the confirmation to a specific element <code>container: 'body'</code></p>
+               </td>
+             </tr>
+            </tbody>
+          </table>
+          <div class="alert alert-info">
+            <strong>Heads up!</strong>
+            Options for individual confirmations can alternatively be specified through the use of data attributes.
+          </div>
+
+          <h3>Markup</h3>
+          <p>For performance reasons, the Tooltip and confirmation data-apis are opt in. If you would like to use them just specify a selector option.</p>
+
+          <h3>Methods</h3>
+          <h4>$().confirmation(options)</h4>
+          <p>Initializes confirmations for an element collection.</p>
+          <h4>.confirmation('show')</h4>
+          <p>Reveals an elements confirmation.</p>
+          <pre class="prettyprint linenums">$('#element').confirmation('show')</pre>
+          <h4>.confirmation('hide')</h4>
+          <p>Hides an elements confirmation.</p>
+          <pre class="prettyprint linenums">$('#element').confirmation('hide')</pre>
+          <h4>.confirmation('toggle')</h4>
+          <p>Toggles an elements confirmation.</p>
+          <pre class="prettyprint linenums">$('#element').confirmation('toggle')</pre>
+          <h4>.confirmation('destroy')</h4>
+          <p>Hides and destroys an element's confirmation.</p>
+          <pre class="prettyprint linenums">$('#element').confirmation('destroy')</pre>
+        </section>
+
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <p>Coding it by <a href="http://twitter.com/ethaizone" target="_blank">@EThaiZone</a>.</p>
+        <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <ul class="footer-links">
+          <li><a href="http://ethaizone.com/blog">Blog</a></li>
+          <li class="muted">&middot;</li>
+          <li><a href="https://github.com/ethaizone/Bootstrap-Confirmation/issues?state=open">Issues</a></li>
+        </ul>
+      </div>
+    </footer>
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+
+    <script src="assets/js/holder/holder.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+
+    <script src="assets/js/application.js"></script>
+
+    <script src="bootstrap-confirmation.js"></script>
+
+    <script src="application.js"></script>
+
+
+
+
+  </body>
+</html>
