@@ -28,6 +28,11 @@
 
 	var Confirmation = function (element, options) {
 		this.init('confirmation', element, options)
+
+		var that = this;
+		$(element).on('shown', function(e) {
+			$(this).next('.popover').on('click.dismiss.confirmation', '[data-dismiss="confirmation"]', $.proxy(that.hide, that))
+		});
 	}
 
 
@@ -43,6 +48,7 @@
 				, title = this.getTitle()
 				, href = this.getHref()
 				, target = this.getTarget()
+				, $e = this.$element
 
 			$tip.find('.popover-title').text(title)
 
@@ -110,6 +116,7 @@
 		placement: 'top'
 		, trigger: 'click'
 		, target : '_self'
+		, href   : '#'
 		, title: 'Are you sure?'
 		, template: '<div class="popover">' +
 				'<div class="arrow"></div>' +
@@ -117,7 +124,7 @@
 				'<div class="popover-content">' +
 				'<div class="btn-group text-center">' +
 				'<a class="btn btn-small btn-primary" href="" target=""><i class="icon-ok-sign"></i> Yes</a>' +
-				'<a class="btn btn-small hide-popover"><i class="icon-remove-sign"></i> No</a>' +
+				'<a class="btn btn-small" data-dismiss="confirmation"><i class="icon-remove-sign"></i> No</a>' +
 				'</div>' +
 				'</div>' +
 				'</div>'
