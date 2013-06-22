@@ -7,4 +7,4 @@ Todo
 ====
 
 - Add event bind to No button
-- Testing all. (I write code but I didn't text single thing.)
+- Testing all. (I write code but I didn't test single thing.)
