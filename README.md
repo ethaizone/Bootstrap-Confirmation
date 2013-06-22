@@ -8,4 +8,6 @@ You can read doc at <a href="http://ethaizone.github.io/Bootstrap-Confirmation">
 Todo
 ====
 
+- Make itself can be as submit button.
+- Make can close when click outsite.
 - Wait your reply. ^^
