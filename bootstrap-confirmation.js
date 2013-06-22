@@ -1,6 +1,6 @@
 /* ===========================================================
  * bootstrap-confirmation.js v1.0.0
- * http://twitter.github.com/bootstrap/javascript.html#popovers
+ * http://ethaizone.github.io/Bootstrap-Confirmation/
  * ===========================================================
  * Copyright 2013 Nimit Suwannagate <ethaizone@hotmail.com>
  *
