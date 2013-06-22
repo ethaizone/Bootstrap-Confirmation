@@ -111,12 +111,16 @@
   , trigger: 'click'
   , target : '_self'
   , title: 'Are you sure?'
-  , template: '<div class="popover"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content">
-        <div class="btn-group" style="text-align:center;">
-          <a class="btn btn-small btn-success" href="" target=""><i class="icon-ok-sign"></i> Yes</a>
-          <a class="btn btn-small btn-inverse hide-popover"><i class="icon-remove-sign"></i> No</a>
-        </div>
-      </div></div>'
+  , template: '<div class="popover">' +
+        '<div class="arrow"></div>' +
+        '<h3 class="popover-title"></h3>' +
+        '<div class="popover-content">' +
+        '<div class="btn-group text-center">' +
+        '<a class="btn btn-small btn-success" href="" target=""><i class="icon-ok-sign"></i> Yes</a>' +
+        '<a class="btn btn-small btn-inverse hide-popover"><i class="icon-remove-sign"></i> No</a>' +
+        '</div>' +
+        '</div>' +
+        '</div>'
   })
 
 
