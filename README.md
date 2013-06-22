@@ -1,10 +1,11 @@
 Bootstrap-Confirmation
 ======================
 
-Javascript plug-in for Twitter bootstrap. Require JQuery and Bootstrap-Tooltip.js to run. This is in Alpha state. No doc. Please patient it a little time.
+Javascript plug-in for Twitter bootstrap. Require JQuery and Bootstrap-Tooltip.js to run. This is in Beta state.
+
+You can read doc at <a href="http://ethaizone.github.io/Bootstrap-Confirmation">document</a>.
 
 Todo
 ====
 
-- Add event bind to No button
-- Testing all. (I write code but I didn't test single thing.)
+- Wait your reply. ^^
