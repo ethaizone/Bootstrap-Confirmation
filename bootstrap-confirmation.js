@@ -132,8 +132,8 @@
 		, template: '<div class="popover">' +
 				'<div class="arrow"></div>' +
 				'<h3 class="popover-title"></h3>' +
-				'<div class="popover-content">' +
-				'<div class="btn-group text-center">' +
+				'<div class="popover-content text-center">' +
+				'<div class="btn-group">' +
 				'<a class="btn btn-small btn-primary" href="" target=""><i class="icon-ok-sign icon-white"></i> Yes</a>' +
 				'<a class="btn btn-small" data-dismiss="confirmation"><i class="icon-remove-sign"></i> No</a>' +
 				'</div>' +
