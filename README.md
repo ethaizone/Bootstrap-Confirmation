@@ -9,5 +9,5 @@ Todo
 ====
 
 - Make itself can be as submit button.
-- Make can close when click outsite.
+- Make itself can close when click outside.
 - Wait your reply. ^^
