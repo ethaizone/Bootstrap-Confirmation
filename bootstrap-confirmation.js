@@ -26,6 +26,7 @@
  /* CONFIRMATION PUBLIC CLASS DEFINITION
 	* =============================== */
 
+	//var for check event at body can have only one.
 	var event_body = false;
 
 	var Confirmation = function (element, options) {
