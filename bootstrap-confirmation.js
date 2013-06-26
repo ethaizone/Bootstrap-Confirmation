@@ -76,18 +76,18 @@
 					, href = this.getHref()
 					, target = this.getTarget()
 					, $e = this.$element
-					, btnOkClass = this.getBtnOkClass()
-					, btnCancelClass = this.getBtnCancelClass()
-					, btnOkLabel = this.getBtnOkLabel()
-					, btnCancelLabel = this.getBtnCancelLabel()
+					, btnokclass = this.getbtnokclass()
+					, btncancelclass = this.getbtncancelclass()
+					, btnoklabel = this.getbtnoklabel()
+					, btncancellabel = this.getbtncancellabel()
 
 				$tip.find('.popover-title').text(title);
 
 				var btnOk = $tip.find('.popover-content > div > a:not([data-dismiss="confirmation"])');
 				var btnCancel = $tip.find('.popover-content > div > a[data-dismiss="confirmation"]');
 
-				btnOk.addClass(btnOkClass).html(btnOkLabel).attr('href', href).attr('target', target);
-				btnCancel.addClass(btnCancelClass).html(btnCancelLabel);
+				btnOk.addClass(btnokclass).html(btnoklabel).attr('href', href).attr('target', target);
+				btnCancel.addClass(btncancelclass).html(btncancellabel);
 
 				$tip.removeClass('fade top bottom left right in')
 			}
@@ -132,48 +132,48 @@
 				return target
 			}
 
-		, getBtnOkClass: function () {
-				var btnOkClass
+		, getbtnokclass: function () {
+				var btnokclass
 					, $e = this.$element
 					, o = this.options
 
-				btnOkClass = (typeof o.btnOkClass == 'function' ? o.btnOkClass.call($e[0]) :	o.btnOkClass)
-					|| $e.attr('data-btnOkClass')
+				btnokclass = (typeof o.btnokclass == 'function' ? o.btnokclass.call($e[0]) :	o.btnokclass)
+					|| $e.attr('data-btnokclass')
 
-				return btnOkClass
+				return btnokclass
 			}
 
-		, getBtnCancelClass: function () {
-				var btnCancelClass
+		, getbtncancelclass: function () {
+				var btncancelclass
 					, $e = this.$element
 					, o = this.options
 
-				btnCancelClass = (typeof o.btnCancelClass == 'function' ? o.btnCancelClass.call($e[0]) :	o.btnCancelClass)
-					|| $e.attr('data-btnCancelClass')
+				btncancelclass = (typeof o.btncancelclass == 'function' ? o.btncancelclass.call($e[0]) :	o.btncancelclass)
+					|| $e.attr('data-btncancelclass')
 
-				return btnCancelClass
+				return btncancelclass
 			}
 
-		, getBtnOkLabel: function () {
-				var btnOkLabel
+		, getbtnoklabel: function () {
+				var btnoklabel
 					, $e = this.$element
 					, o = this.options
 
-				btnOkLabel = (typeof o.btnOkLabel == 'function' ? o.btnOkLabel.call($e[0]) :	o.btnOkLabel)
-					|| $e.attr('data-btnOkLabel')
+				btnoklabel = (typeof o.btnoklabel == 'function' ? o.btnoklabel.call($e[0]) :	o.btnoklabel)
+					|| $e.attr('data-btnoklabel')
 
-				return btnOkLabel
+				return btnoklabel
 			}
 
-		, getBtnCancelLabel: function () {
-				var btnCancelLabel
+		, getbtncancellabel: function () {
+				var btncancellabel
 					, $e = this.$element
 					, o = this.options
 
-				btnCancelLabel = (typeof o.btnCancelLabel == 'function' ? o.btnCancelLabel.call($e[0]) :	o.btnCancelLabel)
-					|| $e.attr('data-btnCancelLabel')
+				btncancellabel = (typeof o.btncancellabel == 'function' ? o.btncancellabel.call($e[0]) :	o.btncancellabel)
+					|| $e.attr('data-btncancellabel')
 
-				return btnCancelLabel
+				return btncancellabel
 			}
 
 		, tip: function () {
@@ -224,10 +224,10 @@
 				'</div>' +
 				'</div>' +
 				'</div>'
-		, btnOkClass:  'btn-primary'
-		, btnCancelClass:  ''
-		, btnOkLabel: '<i class="icon-ok-sign icon-white"></i> Yes'
-		, btnCancelLabel: '<i class="icon-remove-sign"></i> No'
+		, btnokclass:  'btn-primary'
+		, btncancelclass:  ''
+		, btnoklabel: '<i class="icon-ok-sign icon-white"></i> Yes'
+		, btncancellabel: '<i class="icon-remove-sign"></i> No'
 		, singleton: false
 		, popout: false
 	})
