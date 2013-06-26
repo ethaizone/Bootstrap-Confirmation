@@ -76,10 +76,10 @@
 					, href = this.getHref()
 					, target = this.getTarget()
 					, $e = this.$element
-					, btnokclass = this.getbtnokclass()
-					, btncancelclass = this.getbtncancelclass()
-					, btnoklabel = this.getbtnoklabel()
-					, btncancellabel = this.getbtncancellabel()
+					, btnokclass = this.getBtnOkClass()
+					, btncancelclass = this.getBtnCancelClass()
+					, btnoklabel = this.getBtnOkLabel()
+					, btncancellabel = this.getBtnCancelLabel()
 
 				$tip.find('.popover-title').text(title);
 
@@ -132,7 +132,7 @@
 				return target
 			}
 
-		, getbtnokclass: function () {
+		, getBtnOkClass: function () {
 				var btnokclass
 					, $e = this.$element
 					, o = this.options
@@ -143,7 +143,7 @@
 				return btnokclass
 			}
 
-		, getbtncancelclass: function () {
+		, getBtnCancelClass: function () {
 				var btncancelclass
 					, $e = this.$element
 					, o = this.options
@@ -154,7 +154,7 @@
 				return btncancelclass
 			}
 
-		, getbtnoklabel: function () {
+		, getBtnOkLabel: function () {
 				var btnoklabel
 					, $e = this.$element
 					, o = this.options
@@ -165,7 +165,7 @@
 				return btnoklabel
 			}
 
-		, getbtncancellabel: function () {
+		, getBtnCancelLabel: function () {
 				var btncancellabel
 					, $e = this.$element
 					, o = this.options
