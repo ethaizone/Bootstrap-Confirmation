@@ -133,6 +133,17 @@
               <li><a class="btn" data-toggle="confirmation-singleton" data-placement="right">Confirmation on right</a></li>
             </ul>
           </div>
+
+          <h4>Popput <span class="label label-important">New feature!</span></h4>
+          <div class="bs-docs-example tooltip-demo">
+            <ul class="bs-docs-tooltip-examples">
+              <li><a class="btn" data-toggle="confirmation-popout" data-placement="left">Confirmation on left</a></li>
+              <li><a class="btn" data-toggle="confirmation-popout" data-placement="top">Confirmation on top</a></li>
+              <li><a class="btn" data-toggle="confirmation-popout" data-placement="bottom">Confirmation on bottom</a></li>
+              <li><a class="btn" data-toggle="confirmation-popout" data-placement="right">Confirmation on right</a></li>
+            </ul>
+          </div>
+
         </section>
 
 
@@ -193,13 +204,54 @@
                <td>href</td>
                <td>string | function</td>
                <td>'#'</td>
-               <td>default href value if `data-href` attribute isn't present. This will be link of "Yes" button.</td>
+               <td>
+                <p>default href value if `data-href` attribute isn't present.</p>
+                <p>This will be link of "Ok" button.</p>
+               </td>
              </tr>
              <tr>
                <td>target</td>
                <td>string | function</td>
                <td>'_self'</td>
-               <td>default target value if `data-target` attribute isn't present. THis will be target of link at "Yes" button.</td>
+               <td>
+                <p>default target value if `data-target` attribute isn't present.</p>
+                <p>This will be target of link at "Ok" button.</p>
+               </td>
+             </tr>
+             <tr>
+               <td>btnOkClass</td>
+               <td>string | function</td>
+               <td>'btn-primary'</td>
+               <td>
+                <p>default btnOkClass value if `data-btnOkClass` attribute isn't present.</p>
+                <p>This will be class of link at "Ok" button.</p>
+               </td>
+             </tr>
+             <tr>
+               <td>btnCancelClass</td>
+               <td>string | function</td>
+               <td>''</td>
+               <td>
+                <p>default btnCancelClass value if `data-btnCancelClass` attribute isn't present.</p>
+                <p>This will be class of link at "Cancel" button.</p>
+               </td>
+             </tr>
+             <tr>
+               <td>btnOkLabel</td>
+               <td>string | function</td>
+               <td nowrap>'&lt;i class="icon-ok-sign icon-white"&gt;&lt;/i&gt; Yes'</td>
+               <td>
+                <p>default btnOkLabel value if `data-btnOkLabel` attribute isn't present.</p>
+                <p>This will be label of link at "Ok" button.</p>
+               </td>
+             </tr>
+             <tr>
+               <td>btnCancelLabel</td>
+               <td>string | function</td>
+               <td nowrap>'&lt;i class="icon-remove-sign"&gt;&lt;/i&gt; No'</td>
+               <td>
+                <p>default btnCancelLabel value if `data-btnCancelLabel` attribute isn't present.
+                <p>This will be label of link at "Cancel" button.</td>
              </tr>
              <tr>
                <td>
@@ -209,8 +261,19 @@
                <td>boolean</td>
                <td>false</td>
                <td>
-                <p>make confirmation can show only 1 instanse.</p>
+                <p>Set true for make confirmation can show only 1 instanse.</p>
                 <p>If newer confirmation clicked, older will disappear.</td>
+             </tr>
+             <tr>
+               <td>
+                <p>popout</p>
+                <p><span class="label label-important">New feature!</span></p>
+               </td>
+               <td>boolean</td>
+               <td>false</td>
+               <td>
+                <p>Set true for make confirmation hide when click on anywhere except itself.</p>
+                <p>It will effect with other that use same selector to.</td>
              </tr>
              <tr>
                <td>delay</td>
@@ -297,10 +360,6 @@
     <script src="assets/js/application.js"></script>
 
     <script src="bootstrap-confirmation.js"></script>
-
-    <script src="application.js"></script>
-
-
 
 
   </body>

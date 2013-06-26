@@ -26,6 +26,8 @@
  /* CONFIRMATION PUBLIC CLASS DEFINITION
 	* =============================== */
 
+	var event_body = false;
+
 	var Confirmation = function (element, options) {
 		var that = this;
 		this.init('confirmation', element, options)
@@ -39,7 +41,23 @@
 		});
 
 		$(element).on('shown', function(e) {
-			$(this).next('.popover').on('click.dismiss.confirmation', '[data-dismiss="confirmation"]', $.proxy(that.hide, that))
+			var options = that.options;
+			var all = options.all_selector;
+			$(this).next('.popover').one('click.dismiss.confirmation', '[data-dismiss="confirmation"]', $.proxy(that.hide, that))
+			if(that.isPopout()) {
+				if(!event_body) {
+					event_body = $('body').on('click', function (e) {
+						if($(all).is(e.target)) return;
+						if($(all).next('div').has(e.target).length) return;
+
+						$(all).confirmation('hide');
+						$('body').unbind(e);
+						event_body = false;
+						
+						return;
+					});
+				}
+			}
 		});
 	}
 
@@ -51,54 +69,120 @@
 
 		constructor: Confirmation
 
-	, setContent: function () {
-			var $tip = this.tip()
-				, title = this.getTitle()
-				, href = this.getHref()
-				, target = this.getTarget()
-				, $e = this.$element
+		, setContent: function () {
+				var $tip = this.tip()
+					, title = this.getTitle()
+					, href = this.getHref()
+					, target = this.getTarget()
+					, $e = this.$element
+					, btnOkClass = this.getBtnOkClass()
+					, btnCancelClass = this.getBtnCancelClass()
+					, btnOkLabel = this.getBtnOkLabel()
+					, btnCancelLabel = this.getBtnCancelLabel()
 
-			$tip.find('.popover-title').text(title)
+				$tip.find('.popover-title').text(title);
 
-			$tip.find('.popover-content > div > a:eq(0)').attr('href', href).attr('target', target);
+				var btnOk = $tip.find('.popover-content > div > a:not([data-dismiss="confirmation"])');
+				var btnCancel = $tip.find('.popover-content > div > a[data-dismiss="confirmation"]');
 
-			$tip.removeClass('fade top bottom left right in')
-		}
+				btnOk.addClass(btnOkClass).html(btnOkLabel).attr('href', href).attr('target', target);
+				btnCancel.addClass(btnCancelClass).html(btnCancelLabel);
 
-	, hasContent: function () {
-			return this.getTitle()
-		}
+				$tip.removeClass('fade top bottom left right in')
+			}
 
-	, getHref: function () {
-			var href
-				, $e = this.$element
-				, o = this.options
+		, hasContent: function () {
+				return this.getTitle()
+			}
 
-			href = (typeof o.href == 'function' ? o.href.call($e[0]) :	o.href)
-				|| $e.attr('data-href')
+		, isPopout: function () {
+				var popout
+					, $e = this.$element
+					, o = this.options
 
-			return href
-		}
+				popout = (typeof o.popout == 'function' ? o.popout.call($e[0]) :	o.popout)
+					|| $e.attr('data-popout')
 
-	, getTarget: function () {
-			var target
-				, $e = this.$element
-				, o = this.options
+				if(popout == 'false') popout = false;
 
-			target = (typeof o.target == 'function' ? o.target.call($e[0]) :	o.target)
-				|| $e.attr('data-target')
+				return popout
+			}
 
-			return target
-		}
 
-	, tip: function () {
-			this.$tip = this.$tip || $(this.options.template)
-			return this.$tip
-		}
+		, getHref: function () {
+				var href
+					, $e = this.$element
+					, o = this.options
 
-	, destroy: function () {
-			this.hide().$element.off('.' + this.type).removeData(this.type)
-		}
+				href = (typeof o.href == 'function' ? o.href.call($e[0]) :	o.href)
+					|| $e.attr('data-href')
+
+				return href
+			}
+
+		, getTarget: function () {
+				var target
+					, $e = this.$element
+					, o = this.options
+
+				target = (typeof o.target == 'function' ? o.target.call($e[0]) :	o.target)
+					|| $e.attr('data-target')
+
+				return target
+			}
+
+		, getBtnOkClass: function () {
+				var btnOkClass
+					, $e = this.$element
+					, o = this.options
+
+				btnOkClass = (typeof o.btnOkClass == 'function' ? o.btnOkClass.call($e[0]) :	o.btnOkClass)
+					|| $e.attr('data-btnOkClass')
+
+				return btnOkClass
+			}
+
+		, getBtnCancelClass: function () {
+				var btnCancelClass
+					, $e = this.$element
+					, o = this.options
+
+				btnCancelClass = (typeof o.btnCancelClass == 'function' ? o.btnCancelClass.call($e[0]) :	o.btnCancelClass)
+					|| $e.attr('data-btnCancelClass')
+
+				return btnCancelClass
+			}
+
+		, getBtnOkLabel: function () {
+				var btnOkLabel
+					, $e = this.$element
+					, o = this.options
+
+				btnOkLabel = (typeof o.btnOkLabel == 'function' ? o.btnOkLabel.call($e[0]) :	o.btnOkLabel)
+					|| $e.attr('data-btnOkLabel')
+
+				return btnOkLabel
+			}
+
+		, getBtnCancelLabel: function () {
+				var btnCancelLabel
+					, $e = this.$element
+					, o = this.options
+
+				btnCancelLabel = (typeof o.btnCancelLabel == 'function' ? o.btnCancelLabel.call($e[0]) :	o.btnCancelLabel)
+					|| $e.attr('data-btnCancelLabel')
+
+				return btnCancelLabel
+			}
+
+		, tip: function () {
+				this.$tip = this.$tip || $(this.options.template)
+				return this.$tip
+			}
+
+		, destroy: function () {
+				this.hide().$element.off('.' + this.type).removeData(this.type)
+			}
 
 	})
 
@@ -132,14 +216,19 @@
 		, template: '<div class="popover">' +
 				'<div class="arrow"></div>' +
 				'<h3 class="popover-title"></h3>' +
-				'<div class="popover-content  text-center">' +
+				'<div class="popover-content text-center">' +
 				'<div class="btn-group">' +
-				'<a class="btn btn-small btn-primary" href="" target=""><i class="icon-ok-sign icon-white"></i> Yes</a>' +
-				'<a class="btn btn-small" data-dismiss="confirmation"><i class="icon-remove-sign"></i> No</a>' +
+				'<a class="btn btn-small" href="" target=""></a>' +
+				'<a class="btn btn-small" data-dismiss="confirmation"></a>' +
 				'</div>' +
 				'</div>' +
 				'</div>'
+		, btnOkClass:  'btn-primary'
+		, btnCancelClass:  ''
+		, btnOkLabel: '<i class="icon-ok-sign icon-white"></i> Yes'
+		, btnCancelLabel: '<i class="icon-remove-sign"></i> No'
 		, singleton: false
+		, popout: false
 	})
 
 
