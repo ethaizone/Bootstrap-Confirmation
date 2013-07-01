@@ -101,8 +101,7 @@
 					, $e = this.$element
 					, o = this.options
 
-				popout = (typeof o.popout == 'function' ? o.popout.call($e[0]) :	o.popout)
-					|| $e.attr('data-popout')
+				popout = $e.attr('data-popout') || (typeof o.popout == 'function' ? o.popout.call($e[0]) :	o.popout)
 
 				if(popout == 'false') popout = false;
 
@@ -115,8 +114,7 @@
 					, $e = this.$element
 					, o = this.options
 
-				href = (typeof o.href == 'function' ? o.href.call($e[0]) :	o.href)
-					|| $e.attr('data-href')
+				href = $e.attr('data-target') || (typeof o.href == 'function' ? o.href.call($e[0]) :	o.href)
 
 				return href
 			}
@@ -126,8 +124,7 @@
 					, $e = this.$element
 					, o = this.options
 
-				target = (typeof o.target == 'function' ? o.target.call($e[0]) :	o.target)
-					|| $e.attr('data-target')
+				target = $e.attr('data-target') || (typeof o.target == 'function' ? o.target.call($e[0]) :	o.target)
 
 				return target
 			}
@@ -137,8 +134,7 @@
 					, $e = this.$element
 					, o = this.options
 
-				btnOkClass = (typeof o.btnOkClass == 'function' ? o.btnOkClass.call($e[0]) :	o.btnOkClass)
-					|| $e.attr('data-btnOkClass')
+				btnOkClass = $e.attr('data-btnOkClass') || (typeof o.btnOkClass == 'function' ? o.btnOkClass.call($e[0]) :	o.btnOkClass)
 
 				return btnOkClass
 			}
@@ -148,8 +144,7 @@
 					, $e = this.$element
 					, o = this.options
 
-				btnCancelClass = (typeof o.btnCancelClass == 'function' ? o.btnCancelClass.call($e[0]) :	o.btnCancelClass)
-					|| $e.attr('data-btnCancelClass')
+				btnCancelClass = $e.attr('data-btnCancelClass') || (typeof o.btnCancelClass == 'function' ? o.btnCancelClass.call($e[0]) :	o.btnCancelClass)
 
 				return btnCancelClass
 			}
@@ -159,8 +154,7 @@
 					, $e = this.$element
 					, o = this.options
 
-				btnOkLabel = (typeof o.btnOkLabel == 'function' ? o.btnOkLabel.call($e[0]) :	o.btnOkLabel)
-					|| $e.attr('data-btnOkLabel')
+				btnOkLabel = $e.attr('data-btnOkLabel') || (typeof o.btnOkLabel == 'function' ? o.btnOkLabel.call($e[0]) :	o.btnOkLabel)
 
 				return btnOkLabel
 			}
@@ -170,8 +164,7 @@
 					, $e = this.$element
 					, o = this.options
 
-				btnCancelLabel = (typeof o.btnCancelLabel == 'function' ? o.btnCancelLabel.call($e[0]) :	o.btnCancelLabel)
-					|| $e.attr('data-btnCancelLabel')
+				btnCancelLabel = $e.attr('data-btnCancelLabel') || (typeof o.btnCancelLabel == 'function' ? o.btnCancelLabel.call($e[0]) :	o.btnCancelLabel)
 
 				return btnCancelLabel
 			}
