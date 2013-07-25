@@ -9,7 +9,3 @@ Todo
 ====
 
 - Wait your reply. ^^
-
-Donate
-====
-<a href="#"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"></a>
