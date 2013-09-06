@@ -114,7 +114,7 @@
 					, $e = this.$element
 					, o = this.options
 
-				href = $e.attr('data-target') || (typeof o.href == 'function' ? o.href.call($e[0]) :	o.href)
+				href = $e.attr('data-href') || (typeof o.href == 'function' ? o.href.call($e[0]) :	o.href)
 
 				return href
 			}
