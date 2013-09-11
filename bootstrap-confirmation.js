@@ -1,5 +1,5 @@
 /* ===========================================================
- * bootstrap-confirmation.js v1.0.0
+ * bootstrap-confirmation.js v1.0.1
  * http://ethaizone.github.io/Bootstrap-Confirmation/
  * ===========================================================
  * Copyright 2013 Nimit Suwannagate <ethaizone@hotmail.com>
@@ -31,6 +31,10 @@
 
 	var Confirmation = function (element, options) {
 		var that = this;
+
+		// remove href attribute of button
+		$(element).removeAttr('href')
+
 		this.init('confirmation', element, options)
 
 		$(element).on('show', function(e) {
@@ -54,7 +58,7 @@
 						$(all).confirmation('hide');
 						$('body').unbind(e);
 						event_body = false;
-						
+
 						return;
 					});
 				}
