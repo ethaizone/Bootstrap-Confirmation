@@ -92,7 +92,7 @@
 				var btnCancel = $tip.find('.popover-content > div > a[data-dismiss="confirmation"]');
 
 				btnOk.addClass(btnOkClass).html(btnOkLabel).attr('href', href).attr('target', target).on('click', o.onConfirm);
-				btnCancel.addClass(btnCancelClass).html(btnCancelLabel).on('click', o.onCancel);;
+				btnCancel.addClass(btnCancelClass).html(btnCancelLabel).on('click', o.onCancel);
 
 				$tip.removeClass('fade top bottom left right in')
 			}
