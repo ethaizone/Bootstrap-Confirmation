@@ -84,14 +84,15 @@
 					, btnCancelClass = this.getBtnCancelClass()
 					, btnOkLabel = this.getBtnOkLabel()
 					, btnCancelLabel = this.getBtnCancelLabel()
+					, o = this.options
 
 				$tip.find('.popover-title').text(title);
 
 				var btnOk = $tip.find('.popover-content > div > a:not([data-dismiss="confirmation"])');
 				var btnCancel = $tip.find('.popover-content > div > a[data-dismiss="confirmation"]');
 
-				btnOk.addClass(btnOkClass).html(btnOkLabel).attr('href', href).attr('target', target);
-				btnCancel.addClass(btnCancelClass).html(btnCancelLabel);
+				btnOk.addClass(btnOkClass).html(btnOkLabel).attr('href', href).attr('target', target).on('click', o.onConfirm);
+				btnCancel.addClass(btnCancelClass).html(btnCancelLabel).on('click', o.onCancel);;
 
 				$tip.removeClass('fade top bottom left right in')
 			}
@@ -227,6 +228,8 @@
 		, btnCancelLabel: '<i class="icon-remove-sign"></i> No'
 		, singleton: false
 		, popout: false
+		, onConfirm: function(){}
+		, onCancel: function(){}
 	})
 
 
