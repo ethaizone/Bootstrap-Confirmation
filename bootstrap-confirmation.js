@@ -76,6 +76,8 @@
 
 		, setContent: function () {
 				var $tip = this.tip()
+					, $btnOk = this.btnOk()
+					, $btnCancel = this.btnCancel()
 					, title = this.getTitle()
 					, href = this.getHref()
 					, target = this.getTarget()
@@ -88,11 +90,8 @@
 
 				$tip.find('.popover-title').text(title);
 
-				var btnOk = $tip.find('.popover-content > div > a:not([data-dismiss="confirmation"])');
-				var btnCancel = $tip.find('.popover-content > div > a[data-dismiss="confirmation"]');
-
-				btnOk.addClass(btnOkClass).html(btnOkLabel).attr('href', href).attr('target', target).on('click', o.onConfirm);
-				btnCancel.addClass(btnCancelClass).html(btnCancelLabel).on('click', o.onCancel);
+				$btnOk.addClass(btnOkClass).html(btnOkLabel).attr('href', href).attr('target', target).on('click', o.onConfirm);
+				$btnCancel.addClass(btnCancelClass).html(btnCancelLabel).on('click', o.onCancel);
 
 				$tip.removeClass('fade top bottom left right in')
 			}
@@ -177,6 +176,26 @@
 		, tip: function () {
 				this.$tip = this.$tip || $(this.options.template)
 				return this.$tip
+			}
+
+		, btnOk: function () {
+				var $tip = this.tip()
+				return $tip.find('.popover-content > div > a:not([data-dismiss="confirmation"])')
+			}
+
+		, btnCancel: function () {
+				var $tip = this.tip()
+				return $tip.find('.popover-content > div > a[data-dismiss="confirmation"]')
+			}
+
+		, hide: function () {
+				var $btnOk = this.btnOk()
+					, $btnCancel = this.btnCancel()
+
+				$.fn.tooltip.Constructor.prototype.hide.call(this);
+
+				$btnOk.off('click');
+				$btnCancel.off('click');
 			}
 
 		, destroy: function () {
