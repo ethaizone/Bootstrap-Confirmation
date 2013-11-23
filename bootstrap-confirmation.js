@@ -88,10 +88,10 @@
 					, btnCancelLabel = this.getBtnCancelLabel()
 					, o = this.options
 
-				$tip.find('.popover-title').text(title);
+				$tip.find('.popover-title').text(title)
 
-				$btnOk.addClass(btnOkClass).html(btnOkLabel).attr('href', href).attr('target', target).on('click', o.onConfirm);
-				$btnCancel.addClass(btnCancelClass).html(btnCancelLabel).on('click', o.onCancel);
+				$btnOk.addClass(btnOkClass).html(btnOkLabel).attr('href', href).attr('target', target).on('click', o.onConfirm)
+				$btnCancel.addClass(btnCancelClass).html(btnCancelLabel).on('click', o.onCancel)
 
 				$tip.removeClass('fade top bottom left right in')
 			}
@@ -192,10 +192,12 @@
 				var $btnOk = this.btnOk()
 					, $btnCancel = this.btnCancel()
 
-				$.fn.tooltip.Constructor.prototype.hide.call(this);
+				$.fn.tooltip.Constructor.prototype.hide.call(this)
 
-				$btnOk.off('click');
-				$btnCancel.off('click');
+				$btnOk.off('click')
+				$btnCancel.off('click')
+
+				return this
 			}
 
 		, destroy: function () {
