@@ -91,8 +91,8 @@
 				var btnOk = $tip.find('.popover-content > div > a:not([data-dismiss="confirmation"])');
 				var btnCancel = $tip.find('.popover-content > div > a[data-dismiss="confirmation"]');
 
-				btnOk.addClass(btnOkClass).html(btnOkLabel).attr('href', href).attr('target', target).on('click', o.onConfirm);
-				btnCancel.addClass(btnCancelClass).html(btnCancelLabel).on('click', o.onCancel);
+				btnOk.addClass(btnOkClass).html(btnOkLabel).attr('href', href).attr('target', target).off('click').on('click', o.onConfirm);
+				btnCancel.addClass(btnCancelClass).html(btnCancelLabel).off('click').on('click', o.onCancel);
 
 				$tip.removeClass('fade top bottom left right in')
 			}
