@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>Bootstrap3-Confirmation test page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Basic usage with default options</h1>
+          <pre>$('[data-toggle="confirmation"]').confirmation();</pre>
+          <h2>Demo</h2>
+          <a href="#" class="btn btn-default" data-toggle="confirmation">Test me !</a>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h1>With callback function <code>onConfirm</code> and <code>onCancel</code> button</h1>
+          <pre>$('[data-toggle="confirmation-callback"]').confirmation({
+        onConfirm: function() {alert('confirm callback');},
+        onCancel: function() {alert('cancel callback');}
+      });</pre>
+          <h2>Demo</h2>
+          <a href="#" class="btn btn-default" data-toggle="confirmation-callback">Test me !</a>
+
+        </div>
+      </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="bootstrap3-confirmation.js"></script>
+    <script>
+      $('[data-toggle="confirmation"]').confirmation();
+      $('[data-toggle="confirmation-callback"]').confirmation({
+        onConfirm: function() {alert('confirm callback');},
+        onCancel: function() {alert('cancel callback');}
+      });
+    </script>
+  </body>
+</html>

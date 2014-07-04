@@ -1,16 +1,8 @@
 Bootstrap-Confirmation
 ======================
+Much of my development is now under [AngularJS](https://angularjs.org/) then I end to support this plugin, but ... 
 
-Javascript plug-in for Twitter bootstrap. Require JQuery and Bootstrap-Tooltip.js to run. This is in Beta state.
+- The original plugin can be found here : [ethaizone](https://github.com/ethaizone/Bootstrap-Confirmation)
 
-You can read doc at <a href="http://ethaizone.github.io/Bootstrap-Confirmation">document & live example</a>.
+- And Twitter Bootstrap 3.x version here : [Tavicu](https://github.com/Tavicu/bootstrap-confirmation)
 
-Todo
-====
-
-- Wait your reply. ^^
-
-Donate
-======
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ethaizone%40hotmail%2ecom&lc=US&item_name=Nimit%20Suwannagate&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">
-<img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"></a>
