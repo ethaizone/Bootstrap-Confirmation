@@ -1,3 +1,9 @@
+This project is not continue. Please fork it. Sorry again. I don't have time to maintenance it.
+
+For people who looking about support bootstrap 3.x. Please use this fork. https://github.com/Tavicu/bootstrap-confirmation
+
+Thank you for using my plugin. ^^
+
 Bootstrap-Confirmation
 ======================
 
@@ -8,7 +14,7 @@ You can read doc at <a href="http://ethaizone.github.io/Bootstrap-Confirmation">
 Todo
 ====
 
-- Wait your reply. ^^
+- Good bye.
 
 Donate
 ======
