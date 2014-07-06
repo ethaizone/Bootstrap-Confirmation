@@ -10,14 +10,9 @@ Thank you for using my plugin. ^^
 Bootstrap-Confirmation
 ======================
 
-Javascript plug-in for Twitter bootstrap. Require JQuery and Bootstrap-Tooltip.js to run. This is in Beta state.
+Javascript plug-in for Twitter bootstrap. Require JQuery and Bootstrap-Tooltip.js to run. This is not continue.
 
 You can read doc at <a href="http://ethaizone.github.io/Bootstrap-Confirmation">document & live example</a>.
-
-Todo
-====
-
-- Good bye.
 
 Donate
 ======
