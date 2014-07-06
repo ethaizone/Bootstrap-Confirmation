@@ -53,6 +53,7 @@
 				if(!event_body) {
 					event_body = $('body').on('click', function (e) {
 						if($(all).is(e.target)) return;
+						if($(all).has(e.target).length) return;
 						if($(all).next('div').has(e.target).length) return;
 
 						$(all).confirmation('hide');
