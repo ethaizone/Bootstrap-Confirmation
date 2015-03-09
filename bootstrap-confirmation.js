@@ -205,6 +205,10 @@
 				this.hide().$element.off('.' + this.type).removeData(this.type)
 			}
 
+        , setOptions: function (newOptions) {
+                this.options = $.extend({}, this.options, newOptions || {});
+			}
+
 	})
 
 
@@ -213,7 +217,7 @@
 
 	var old = $.fn.confirmation
 
-	$.fn.confirmation = function (option) {
+	$.fn.confirmation = function (option, param) {
 		var that = this
 		return this.each(function () {
 			var $this = $(this)
@@ -222,7 +226,13 @@
 			options = options || {}
 			options.all_selector = that.selector
 			if (!data) $this.data('confirmation', (data = new Confirmation(this, options)))
-			if (typeof option == 'string') data[option]()
+			if (typeof option == 'string') {
+                if (option === 'option') {
+                    data.setOptions(param)
+                } else {
+                    data[option]();
+                }
+            }
 		})
 	}
 
